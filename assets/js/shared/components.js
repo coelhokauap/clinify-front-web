@@ -2,7 +2,7 @@
 (function () {
     'use strict';
     var area = document.body.dataset.area || '';
-    var pagina = window.location.pathname.split('/').pop() || 'login.html';
+    var pagina = window.location.pathname.split('/').pop() || 'index.html';
     var menus = {
         estudante: [['home_e.html', 'Início', 'inicio'], ['casos.html', 'Simulação clínica', 'simulacao'], ['estudos.html', 'Estudos', 'estudos'], ['desempenho.html', 'Desempenho', 'desempenho'], ['perfil.html', 'Meu perfil', 'perfil']],
         professor: [['home_p.html', 'Início', 'inicio'], ['turmas.html', 'Minhas turmas', 'turmas'], ['alunos.html', 'Alunos', 'alunos'], ['estudo.html', 'Área de estudo', 'estudos'], ['desempenho.html', 'Desempenho', 'desempenho'], ['casos.html', 'Salas de simulação', 'simulacao'], ['perfil.html', 'Meu perfil', 'perfil']],
@@ -76,7 +76,7 @@
             return '<li><a href="' + item[0] + '" class="sidebar__link' + (ativa ? ' is-active' : '') + '" data-label="' + item[1] + '" aria-label="' + item[1] + '"' + (ativa ? ' aria-current="page"' : '') + '>' + icone + '<span class="sidebar__link-text">' + item[1] + '</span></a></li>';
         }).join('');
         var voltar = document.createElement('a');
-        voltar.href = '../login.html';
+        voltar.href = '../index.html';
         voltar.className = 'sidebar__link sidebar__login';
         voltar.setAttribute('aria-label', 'Voltar ao login');
         voltar.dataset.label = 'Voltar ao login';
