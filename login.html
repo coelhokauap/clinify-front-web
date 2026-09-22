@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Acesse a plataforma educacional Clinify para estudos, simulações clínicas e acompanhamento acadêmico.">
+    <link rel="icon" type="image/svg+xml" href="assets/img/clinify.svg">
+
+    <title>Clinify | Login</title>
+
+
+    <link rel="stylesheet" href="assets/css/root.css">
+    <link rel="stylesheet" href="assets/css/estrutura.css">
+    <link rel="stylesheet" href="assets/css/acesso.css">
+</head>
+
+<body>
+
+    <div class="page">
+
+        <aside class="brand-panel">
+            <div class="brand-panel__content">
+                <p class="brand-panel__institution">Hospital Moinhos de Vento</p>
+                <h1 class="brand-panel__logo">Clinify</h1>
+                <p class="brand-panel__tagline">Aprenda. Pratique. Evolua.</p>
+
+                <svg class="pulse" viewBox="0 0 320 60" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <defs>
+                        <linearGradient id="pulse-gradient" x1="0" y1="0" x2="1" y2="0">
+                            <stop offset="0%" stop-color="#12a08b" />
+                            <stop offset="100%" stop-color="#ffffff" />
+                        </linearGradient>
+                    </defs>
+                    <polyline class="pulse__line" points="0,30 90,30 105,8 120,52 135,30 175,30 190,14 205,44 220,30 320,30" />
+                </svg>
+            </div>
+        </aside>
+
+        <main class="form-panel">
+            <div class="form-panel__content">
+                <h2>Bem-vindo de volta</h2>
+                <p class="form-panel__subtitle">Entre para continuar seus estudos.</p>
+
+                <form id="loginForm">
+                    <p id="login-feedback" class="feedback" role="status" aria-live="polite"></p>
+                    <div class="field">
+                        <label for="email">E-mail</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email" autocomplete="username"
+                            placeholder="voce@exemplo.com"
+                            required
+                        >
+                    </div>
+
+                    <div class="field">
+                        <label for="password">Senha</label>
+                        <input
+                            type="password"
+                            id="password"
+                            name="password" autocomplete="current-password" minlength="6"
+                            placeholder="Digite sua senha"
+                            required
+                        >
+                    </div>
+
+                    <div class="options">
+                        <label class="remember">
+                            <input type="checkbox" id="remember">
+                            <span>Lembrar meu e-mail</span>
+                        </label>
+
+                        <button type="button" class="forgot-password" data-login-help>Precisa de ajuda?</button>
+                    </div>
+
+                    <button type="submit" class="login-button">Entrar</button>
+                </form>
+
+                <p class="register">
+                    Acesse seus estudos, turmas e simulações clínicas.
+                </p>
+            </div>
+        </main>
+
+    </div>
+
+    <script src="assets/js/shared/components.js"></script>
+    <script src="assets/js/shared/interactions.js"></script>
+    <script src="assets/js/auth/login.js"></script>
+
+</body>
+
+</html>

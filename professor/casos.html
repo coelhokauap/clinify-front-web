@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Clinify | Salas de simulação: ambiente educacional Clinify para aprendizagem e prática clínica."
+    />
+
+    <title>Clinify | Salas de simulação</title>
+    <link rel="icon" type="image/svg+xml" href="../assets/img/clinify.svg" />
+
+    <link rel="stylesheet" href="../assets/css/root.css" />
+    <link rel="stylesheet" href="../assets/css/estrutura.css" />
+    <link rel="stylesheet" href="../assets/css/simulacao.css" />
+  </head>
+
+  <body class="pagina-painel pagina-salas" data-area="professor">
+    <div class="app-shell">
+      <aside class="sidebar">
+        <button
+          class="sidebar__toggle"
+          type="button"
+          data-sidebar-collapse
+          aria-label="Recolher menu"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <polyline points="15 18 9 12 15 6" />
+          </svg>
+        </button>
+
+        <div class="sidebar__brand">
+          <span class="sidebar__mark"
+            ><img src="../assets/img/clinify.svg" alt="" width="38" height="38"
+          /></span>
+          <span class="sidebar__brand-text">
+            <span class="sidebar__eyebrow">Hospital Moinhos de Vento</span>
+            <span class="sidebar__wordmark">Clinify</span>
+          </span>
+        </div>
+
+        <nav aria-label="Navegação principal">
+          <ul class="sidebar__nav" data-navigation></ul>
+        </nav>
+      </aside>
+
+      <div class="sidebar__backdrop" data-sidebar-backdrop></div>
+
+      <div class="app-main">
+        <header class="topbar">
+          <button
+            class="topbar__menu-btn"
+            type="button"
+            data-sidebar-mobile-toggle
+            aria-label="Abrir menu"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <line x1="4" y1="7" x2="20" y2="7" />
+              <line x1="4" y1="12" x2="20" y2="12" />
+              <line x1="4" y1="17" x2="20" y2="17" />
+            </svg>
+          </button>
+
+          <span class="topbar__context">Área do professor</span>
+          <div class="topbar__spacer"></div>
+          <a href="perfil.html" class="topbar__avatar" aria-label="Meu perfil"
+            >PR</a
+          >
+        </header>
+
+        <main class="salas-page">
+          <header class="salas-cabecalho">
+            <div>
+              <p class="salas-eyebrow">SIMULAÇÃO CLÍNICA · PROFESSOR</p>
+              <h1>Suas salas, sua turma.</h1>
+              <p>
+                Prepare uma atividade, compartilhe o código e acompanhe as
+                respostas dos alunos.
+              </p>
+            </div>
+            <button class="btn btn--primary" type="button" id="nova-sala">
+              + Criar sala
+            </button>
+          </header>
+          <section class="salas-guia" aria-label="Como funciona">
+            <div>
+              <span>01</span><strong>Crie uma sala</strong>
+              <p>Dê um nome à atividade e escolha a turma.</p>
+            </div>
+            <div>
+              <span>02</span><strong>Compartilhe</strong>
+              <p>Os alunos entram com o código ou QR Code.</p>
+            </div>
+            <div>
+              <span>03</span><strong>Acompanhe a turma</strong>
+              <p>Veja as tentativas e revise as respostas.</p>
+            </div>
+          </section>
+          <section class="salas-indicadores" aria-label="Resumo das salas">
+            <article>
+              <span>Salas abertas</span><strong id="total-abertas">0</strong>
+            </article>
+            <article>
+              <span>Tentativas registradas</span
+              ><strong id="total-tentativas">0</strong>
+            </article>
+            <article>
+              <span>Simulações concluídas</span
+              ><strong id="total-concluidas">0</strong>
+            </article>
+          </section>
+          <section aria-labelledby="minhas-salas">
+            <div class="salas-lista-cabecalho">
+              <h2 id="minhas-salas">Minhas salas</h2>
+              <span id="salas-contagem" role="status"></span>
+            </div>
+            <div class="salas-filtros">
+              <label
+                >Buscar sala<input
+                  type="search"
+                  id="buscar-sala"
+                  placeholder="Nome, turma ou código"
+              /></label>
+              <label
+                >Status<select id="status-sala">
+                  <option value="todas">Todas as salas</option>
+                  <option value="aberta">Abertas</option>
+                  <option value="encerrada">Encerradas</option>
+                </select></label
+              >
+            </div>
+            <div class="salas-grid" id="salas-grid"></div>
+            <div class="salas-vazio" id="salas-vazio" hidden>
+              <span aria-hidden="true">+</span>
+              <h3>Sua próxima atividade começa aqui</h3>
+              <p>
+                Crie uma sala para gerar o primeiro código e convidar sua turma.
+              </p>
+              <button class="btn btn--primary" type="button" data-criar-sala>
+                Criar minha primeira sala
+              </button>
+            </div>
+          </section>
+          <p class="salas-nota">
+            Compartilhe o código com sua turma e acompanhe as respostas de cada
+            aluno. Encerre a sala quando a atividade terminar.
+          </p>
+        </main>
+      </div>
+    </div>
+    <div class="modal-overlay" id="modal-sala" hidden>
+      <div class="modal-box salas-modal">
+        <h2 id="titulo-sala">Criar sala</h2>
+        <p>O código é gerado automaticamente ao salvar.</p>
+        <form id="form-sala">
+          <input type="hidden" id="codigo-edicao" />
+          <div class="modal-field">
+            <label for="nome-sala">Nome da atividade</label
+            ><input
+              id="nome-sala"
+              name="nome"
+              required
+              maxlength="80"
+              placeholder="Ex.: Anamnese · Turma 6A"
+            />
+          </div>
+          <div class="modal-field">
+            <label for="turma-sala">Turma</label
+            ><input
+              id="turma-sala"
+              name="turma"
+              required
+              maxlength="60"
+              placeholder="Ex.: Medicina 6A"
+              list="turmas-sugeridas"
+            /><datalist id="turmas-sugeridas">
+              <option value="Medicina 6A"></option>
+              <option value="Medicina 7B"></option>
+              <option value="Internato Clínica"></option>
+            </datalist>
+          </div>
+          <div class="modal-field">
+            <label for="cenario-sala">Caso clínico</label
+            ><select id="cenario-sala" name="cenario">
+              <option>Cefaleia intensa inédita · Clínica Médica</option>
+            </select>
+          </div>
+          <div class="modal-field">
+            <label for="instrucoes-sala"
+              >Orientações para os alunos <span>(opcional)</span></label
+            ><textarea
+              id="instrucoes-sala"
+              name="instrucoes"
+              rows="3"
+              maxlength="1000"
+              placeholder="O que sua turma deve praticar nesta atividade?"
+            ></textarea>
+          </div>
+          <div class="modal-actions">
+            <button type="button" class="btn btn--ghost" data-fechar-modal>
+              Cancelar</button
+            ><button type="submit" class="btn btn--primary" id="salvar-sala">
+              Criar e gerar código
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="modal-overlay" id="modal-analise" hidden>
+      <div class="modal-box salas-modal salas-modal--analise">
+        <div class="salas-lista-cabecalho">
+          <h2 id="titulo-analise">Analisar sala</h2>
+          <button type="button" class="btn btn--ghost" data-fechar-modal>
+            Fechar
+          </button>
+        </div>
+        <div id="conteudo-analise"></div>
+      </div>
+    </div>
+    <div class="modal-overlay" id="modal-qr" hidden>
+      <div class="modal-box salas-modal qr-modal">
+        <div class="salas-lista-cabecalho">
+          <h2 id="titulo-qr">QR Code da sala</h2>
+          <button type="button" class="btn btn--ghost" data-fechar-modal>
+            Fechar
+          </button>
+        </div>
+        <p>
+          Peça aos alunos para lerem este QR Code na tela de Simulação Clínica.
+        </p>
+        <div
+          id="qr-sala"
+          class="qr-modal__codigo"
+          aria-label="QR Code da sala"
+        ></div>
+        <strong id="qr-sala-codigo" class="qr-modal__texto"></strong>
+        <div class="modal-actions">
+          <button type="button" class="btn btn--ghost" id="baixar-qr">
+            Baixar QR Code
+          </button>
+          <button type="button" class="btn btn--primary" id="copiar-qr">
+            Copiar código
+          </button>
+        </div>
+      </div>
+    </div>
+    <script src="../assets/js/shared/components.js"></script>
+    <script src="../assets/js/shared/interactions.js"></script>
+    <script src="../assets/js/shared/layout.js"></script>
+    <script src="../assets/js/shared/rooms.js"></script>
+    <script src="../assets/js/shared/qrcode.min.js"></script>
+    <script src="../assets/js/professor/rooms.js"></script>
+  </body>
+</html>

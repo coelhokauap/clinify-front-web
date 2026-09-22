@@ -1,0 +1,283 @@
+/* Tela de acesso */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    font-family: var(--font-body);
+    color: var(--ink);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+.page {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+}
+
+.brand-panel {
+    display: flex;
+    align-items: center;
+    padding: 64px;
+    color: #ffffff;
+    background: var(--primary-dark);
+}
+
+.brand-panel__content {
+    max-width: 330px;
+}
+
+.brand-panel__logo {
+    margin-bottom: 14px;
+    color: #ffffff;
+    font-family: var(--font-display);
+    font-size: 46px;
+    font-weight: 500;
+}
+
+.brand-panel__tagline {
+    max-width: 250px;
+    color: #eaf1ff;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.pulse {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-top: 56px;
+}
+
+.pulse__line {
+    fill: none;
+    stroke: url(#pulse-gradient);
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 620;
+    stroke-dashoffset: 620;
+    animation: draw-pulse 1.8s ease-out 0.3s forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .pulse__line {
+        animation: none;
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes draw-pulse {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+.form-panel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 48px 32px;
+    background: var(--surface);
+}
+
+.form-panel__content {
+    width: 100%;
+    max-width: 420px;
+    padding: clamp(26px, 4vw, 42px);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sheet);
+    background: var(--surface);
+    box-shadow: var(--shadow);
+}
+
+.form-panel__content h2 {
+    margin-bottom: 8px;
+    color: var(--ink-strong);
+    font-family: var(--font-display);
+    font-size: 30px;
+    font-weight: 650;
+    letter-spacing: -0.03em;
+}
+
+.form-panel__subtitle {
+    margin-bottom: 34px;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.field {
+    margin-bottom: 20px;
+}
+
+.field label {
+    display: block;
+    margin-bottom: 7px;
+    color: var(--ink);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.field input {
+    width: 100%;
+    height: 50px;
+    padding: 0 14px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    outline: none;
+    color: var(--ink);
+    background: #ffffff;
+    font-size: 14px;
+    transition: border-color 0.16s ease, box-shadow 0.16s ease;
+}
+
+.field input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(0, 103, 158, 0.12);
+}
+
+.field input::placeholder {
+    color: #8ea0ae;
+}
+
+.options {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    margin-bottom: 28px;
+    font-size: 13px;
+}
+
+.remember {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--muted);
+}
+
+.remember input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: var(--accent);
+}
+
+.forgot-password,
+.register a {
+    color: var(--primary);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.forgot-password:hover,
+.register a:hover {
+    text-decoration: underline;
+}
+
+.login-button {
+    width: 100%;
+    min-height: 50px;
+    border: 0;
+    border-radius: var(--radius);
+    color: #ffffff;
+    background: linear-gradient(120deg, var(--primary-dark), var(--primary));
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.22s var(--motion-ease), transform 0.22s var(--motion-ease), box-shadow 0.22s var(--motion-ease);
+}
+
+.login-button:hover {
+    background: var(--primary-dark);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow);
+}
+
+.login-button:focus-visible,
+.field input:focus-visible,
+.forgot-password:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+}
+
+.register {
+    margin-top: 28px;
+    color: var(--muted);
+    font-size: 13px;
+    text-align: center;
+}
+
+@media (max-width: 880px) {
+    .page {
+        grid-template-columns: 1fr;
+    }
+
+    .brand-panel {
+        justify-content: center;
+        padding: 42px 28px;
+    }
+
+    .brand-panel__content {
+        max-width: 420px;
+        text-align: center;
+    }
+
+    .brand-panel__tagline {
+        max-width: none;
+        margin: 0 auto;
+    }
+
+    .pulse {
+        max-width: 320px;
+        margin: 32px auto 0;
+    }
+}
+
+@media (max-width: 460px) {
+    .brand-panel__logo {
+        font-size: 38px;
+    }
+
+    .form-panel {
+        padding: 28px 18px 44px;
+    }
+
+    .form-panel__content {
+        padding: 26px 20px;
+    }
+
+    .options {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+.brand-panel { background: linear-gradient(145deg, var(--primary-dark), var(--primary) 76%, #5d62b3); border-top: 6px solid var(--accent); }
+.brand-panel__logo { letter-spacing: -0.03em; }
+.form-panel { background: linear-gradient(180deg, #ffffff, var(--bg)); }
+.form-panel__content { border-color: var(--border); box-shadow: var(--shadow); }
+:where(button, a, input):focus-visible { outline: 3px solid var(--focus-ring); outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+}
+.brand-panel__institution { margin-bottom: 24px; font-size: 14px; font-weight: 600; line-height: 1.5; letter-spacing: 0.4px; }
+.brand-panel__logo { font-family: var(--font-body); font-weight: 700; letter-spacing: -1.5px; }
+:where(a, button, input):focus-visible { outline: 3px solid var(--focus-ring); outline-offset: 3px; }
+
+/* Mobile first: acesso em uma coluna; painel lateral no desktop. */
+.forgot-password { border: 0; padding: 0; background: transparent; color: var(--primary-dark); cursor: pointer; }
+.feedback:empty { display: none; }
+.feedback { margin-bottom: 16px; font-size: 0.875rem; color: var(--primary-dark); }
+@media (min-width: 881px) {
+    .page { grid-template-columns: minmax(320px, 470px) minmax(0, 1fr); }
+}

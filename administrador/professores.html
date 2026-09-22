@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Clinify | Gerenciar professores: ambiente educacional Clinify para aprendizagem e prática clínica.">
+    <link rel="icon" type="image/svg+xml" href="../assets/img/clinify.svg">
+
+    <title>Clinify | Gerenciar professores</title>
+
+
+    <link rel="stylesheet" href="../assets/css/root.css">
+    <link rel="stylesheet" href="../assets/css/estrutura.css">
+
+</head>
+
+<body class="pagina-painel" data-area="administrador">
+
+    <div class="app-shell">
+
+
+        <aside class="sidebar">
+            <button class="sidebar__toggle" type="button" data-sidebar-collapse aria-label="Recolher menu">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6" /></svg>
+            </button>
+
+            <div class="sidebar__brand">
+                <span class="sidebar__mark"><img src="../assets/img/clinify.svg" alt="" width="38" height="38"></span>
+                <span class="sidebar__brand-text">
+                    <span class="sidebar__eyebrow">Hospital Moinhos de Vento</span>
+                    <span class="sidebar__wordmark">Clinify</span>
+                </span>
+            </div>
+
+            <nav aria-label="Navegação principal"><ul class="sidebar__nav" data-navigation></ul></nav>
+        </aside>
+
+        <div class="sidebar__backdrop" data-sidebar-backdrop></div>
+
+
+        <div class="app-main">
+
+
+            <header class="topbar">
+                <button class="topbar__menu-btn" type="button" data-sidebar-mobile-toggle aria-label="Abrir menu">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="7" x2="20" y2="7" /><line x1="4" y1="12" x2="20" y2="12" /><line x1="4" y1="17" x2="20" y2="17" /></svg>
+                </button>
+                <div class="topbar__spacer"></div>
+                <a href="perfil.html" class="topbar__avatar" aria-label="Ir para o meu perfil" title="Meu perfil">
+                    <span class="topbar__avatar-initials">AD</span>
+                </a>
+            </header>
+
+
+            <main class="panel-page">
+
+                <div class="page-header">
+                    <div>
+                        <h1 class="page-title">Gerenciar professores</h1>
+                        <p class="page-subtitle">Cadastre, edite ou desative o acesso de professores à plataforma</p>
+                    </div>
+                    <button type="button" class="btn btn--primary" id="btn-add-professor">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" /></svg>
+                        Cadastrar professor
+                    </button>
+                </div>
+
+                <section class="panel-toolbar">
+                    <div class="panel-toolbar__search">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>
+                        <input type="search" id="professor-search" placeholder="Buscar por nome ou e-mail…" aria-label="Buscar professor">
+                    </div>
+                    <div class="panel-toolbar__spacer"></div>
+                    <select id="status-filter" aria-label="Filtrar por status">
+                        <option value="all">Todos os status</option>
+                        <option value="ativo">Ativos</option>
+                        <option value="inativo">Inativos</option>
+                    </select>
+                </section>
+
+                <p class="empty-state" id="professores-empty" hidden>Nenhum professor encontrado.</p>
+
+                <div class="data-table-wrap" id="professores-table-wrap">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Nome</th>
+                                <th scope="col">E-mail</th>
+                                <th scope="col">Status</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody id="professores-tbody"></tbody>
+                    </table>
+                </div>
+
+            </main>
+        </div>
+    </div>
+
+
+    <div class="modal-overlay" id="modal-professor" hidden>
+        <div class="modal-box">
+            <h3 id="modal-professor-titulo">Cadastrar professor</h3>
+            <form id="form-professor">
+                <input type="hidden" id="professor-id">
+                <div class="modal-field">
+                    <label for="professor-nome">Nome completo</label>
+                    <input type="text" id="professor-nome" placeholder="Ex: Prof. João Martins" required>
+                </div>
+                <div class="modal-field">
+                    <label for="professor-email">E-mail</label>
+                    <input type="email" id="professor-email" placeholder="nome@clinify.com" required>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn btn--ghost" id="btn-cancelar-professor">Cancelar</button>
+                    <button type="submit" class="btn btn--primary" id="btn-salvar-professor">Cadastrar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="../assets/js/shared/components.js"></script>
+    <script src="../assets/js/shared/interactions.js"></script>
+    <script src="../assets/js/shared/layout.js"></script>
+    <script src="../assets/js/shared/mock-data.js"></script>
+    <script src="../assets/js/admin/professores.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Clinify | Home: ambiente educacional Clinify para aprendizagem e prática clínica.">
+
+    <title>Clinify | Home</title>
+    <link rel="icon" type="image/svg+xml" href="../assets/img/clinify.svg">
+
+
+    <link rel="stylesheet" href="../assets/css/root.css">
+    <link rel="stylesheet" href="../assets/css/estrutura.css" />
+
+  </head>
+
+  <body class="pagina-inicio" data-area="estudante">
+    <div class="app-shell">
+
+
+        <aside class="sidebar">
+            <button class="sidebar__toggle" type="button" data-sidebar-collapse aria-label="Recolher menu">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6" /></svg>
+            </button>
+
+            <div class="sidebar__brand">
+                <span class="sidebar__mark"><img src="../assets/img/clinify.svg" alt="" width="38" height="38"></span>
+                <span class="sidebar__brand-text">
+                    <span class="sidebar__eyebrow">Hospital Moinhos de Vento</span>
+                    <span class="sidebar__wordmark">Clinify</span>
+                </span>
+            </div>
+
+            <nav aria-label="Navegação principal"><ul class="sidebar__nav" data-navigation></ul></nav>
+        </aside>
+
+        <div class="sidebar__backdrop" data-sidebar-backdrop></div>
+
+
+        <div class="app-main">
+
+
+            <header class="topbar">
+                <button class="topbar__menu-btn" type="button" data-sidebar-mobile-toggle aria-label="Abrir menu">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="7" x2="20" y2="7" /><line x1="4" y1="12" x2="20" y2="12" /><line x1="4" y1="17" x2="20" y2="17" /></svg>
+                </button>
+                <div class="topbar__search">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="7" />
+                    <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                  </svg>
+                  <input type="text" placeholder="Buscar…" aria-label="Buscar" />
+                </div>
+
+                <div class="topbar__spacer"></div>
+
+                <button class="topbar__bell" type="button" aria-label="Notificações" id="bell-btn">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M6 8a6 6 0 0 1 12 0c0 5 2 6 2 6H4s2-1 2-6" />
+                        <path d="M10 20a2 2 0 0 0 4 0" />
+                    </svg>
+                    <span class="dot"></span>
+                </button>
+
+                <div class="notifications" id="notifications">
+                    <h4>Notificações</h4>
+                    <ul>
+                        <li>Nova mensagem de estudos</li>
+                        <li>Atualização de desempenho</li>
+                        <li>Simulação clínica disponível</li>
+                    </ul>
+                </div>
+
+                <a href="perfil.html" class="topbar__avatar" aria-label="Ir para o meu perfil" title="Meu perfil">
+                    <span class="topbar__avatar-initials">ES</span>
+                </a>
+            </header>
+
+
+        <main class="app-content">
+          <h1 class="page-title">Bem-vindo!</h1>
+          <p class="page-subtitle">
+            Continue sua jornada de aprendizado médico
+          </p>
+
+          <div class="stat-grid">
+            <div class="stat-card">
+              <span class="stat-card__icon stat-card__icon--flame">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M12 2c1 3-3 4-3 8a3 3 0 0 0 6 0c1 1 2 2.5 2 4.5A5 5 0 0 1 7 15c0-5 5-6 5-13Z"
+                  />
+                </svg>
+              </span>
+              <span class="stat-card__value">7</span>
+              <span class="stat-card__label">Dias consecutivos</span>
+              <span class="stat-card__hint">Recorde pessoal</span>
+            </div>
+
+            <div class="stat-card">
+              <span class="stat-card__icon stat-card__icon--purple">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M8 21h8" />
+                  <path d="M12 17v4" />
+                  <path d="M7 4h10v4a5 5 0 0 1-10 0Z" />
+                  <path d="M7 5H4v1a4 4 0 0 0 4 4" />
+                  <path d="M17 5h3v1a4 4 0 0 1-4 4" />
+                </svg>
+              </span>
+              <span class="stat-card__value">12</span>
+              <span class="stat-card__label">Nível atual</span>
+              <div class="stat-card__bar"><span class="bar--60"></span></div>
+            </div>
+
+            <div class="stat-card">
+              <span class="stat-card__icon stat-card__icon--blue">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <circle cx="12" cy="12" r="8" />
+                  <circle cx="12" cy="12" r="3" />
+                </svg>
+              </span>
+              <span class="stat-card__value">75%</span>
+              <span class="stat-card__label">Meta diária</span>
+            </div>
+
+            <div class="stat-card">
+              <span class="stat-card__icon stat-card__icon--lilac">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M20 6 9 17l-5-5" />
+                </svg>
+              </span>
+              <span class="stat-card__value">89%</span>
+              <span class="stat-card__label">Taxa de acertos</span>
+              <span class="stat-card__hint stat-card__hint--up"
+                >+5% esta semana</span
+              >
+            </div>
+
+            <div class="stat-card stat-card--cta">
+              <span class="stat-card__cta-label">Desafio Diário</span>
+              <button type="button" class="stat-card__cta-btn">Iniciar</button>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <script src="../assets/js/shared/components.js"></script>
+    <script src="../assets/js/shared/interactions.js"></script>
+    <script src="../assets/js/shared/layout.js"></script>
+  </body>
+</html>

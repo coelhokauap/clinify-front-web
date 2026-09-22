@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Clinify | Consulta simulada: ambiente educacional Clinify para aprendizagem e prática clínica.">
+    <title>Clinify | Consulta simulada</title>
+    <link rel="icon" type="image/svg+xml" href="../assets/img/clinify.svg" />
+    <link rel="stylesheet" href="../assets/css/root.css" />
+    <link rel="stylesheet" href="../assets/css/estrutura.css" />
+    <link rel="stylesheet" href="../assets/css/consulta.css" />
+  </head>
+  <body
+    class="consultation-body"
+    data-simulation-consultation
+    data-area="estudante"
+  >
+    <div class="consultation-page">
+      <header class="consultation-topbar">
+        <a
+          class="consultation-brand"
+          href="casos.html?materia=neurologia"
+          aria-label="Voltar aos casos Clinify"
+        >
+          <span class="consultation-brand__mark"
+            ><img src="../assets/img/clinify.svg" alt="" width="36" height="36"
+          /></span>
+          <span><small>Clinify</small><strong>Consulta simulada</strong></span>
+        </a>
+        <nav class="consultation-nav" aria-label="Navegação da consulta">
+          <span class="consultation-nav__status">Ambiente educacional</span>
+          <a class="back-link" href="casos.html?materia=neurologia">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="m14 6-6 6 6 6" />
+            </svg>
+            Voltar aos casos
+          </a>
+        </nav>
+      </header>
+
+      <main class="consultation-layout">
+        <section class="chat-simulation" aria-labelledby="case-title">
+          <header class="chat-header">
+            <div class="chat-header__case">
+              <span class="consulta-materia"
+                ><span
+                  class="study-icon study-icon--purple"
+                  data-materia-icon="neurologia"
+                  aria-hidden="true"
+                ></span
+                ><strong data-materia-label
+                  >Neurologia · dificuldade alta</strong
+                ></span
+              >
+              <h1 id="case-title">Cefaleia intensa inédita</h1>
+              <p>
+                Converse com o paciente virtual, investigue a queixa e explique
+                seus próximos passos. As respostas são geradas por regras simples.
+              </p>
+            </div>
+            <div class="chat-header__actions">
+              <div
+                class="score-panel"
+                aria-label="Tempo e pontuação da simulação"
+              >
+                <div>
+                  <span>Tempo</span><strong data-sim-timer>00:00</strong>
+                </div>
+                <div><span>Pontos</span><strong data-sim-score>64</strong></div>
+              </div>
+              <button class="finish-button" type="button" data-finish-case>
+                Finalizar caso
+              </button>
+            </div>
+          </header>
+
+          <section
+            class="chat-thread"
+            data-chat-thread
+            role="log"
+            aria-label="Conversa da simulação"
+            aria-live="polite"
+            aria-relevant="additions"
+          >
+            <article class="bubble patient">
+              Doutor, essa dor na cabeça toda não passa. Fica martelando e
+              qualquer luz piora muito.
+            </article>
+          </section>
+
+          <form class="reply-box" data-sim-form>
+            <label for="caseReply">Sua fala</label>
+            <div class="reply-box__entry">
+              <textarea
+                id="caseReply"
+                data-sim-input
+                name="fala"
+                rows="2"
+                maxlength="2000"
+                placeholder="Escreva o que você diria ao paciente..."
+                aria-describedby="reply-hint"
+                required
+              ></textarea>
+              <button
+                class="send-button"
+                type="submit"
+                aria-label="Enviar fala"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="m5 12 14-7-4 14-3-6-7-1Z" />
+                  <path d="m12 13 7-8" />
+                </svg>
+              </button>
+            </div>
+          </form>
+        </section>
+
+        <aside class="case-brief" aria-label="Contexto do caso">
+          <div class="case-brief__heading">
+            <span>Contexto do caso</span
+            ><strong>Conheça a pessoa antes de responder</strong>
+          </div>
+          <section class="record-card" aria-labelledby="record-title">
+            <h2 id="record-title">Maria da Rosa, 45 anos</h2>
+            <p>
+              Paciente relata cefaleia holocraniana pulsátil de forte
+              intensidade há 4 dias, com fotofobia e fonofobia. Refere melhora
+              parcial com paracetamol e nega episódios prévios semelhantes.
+            </p>
+            <p>
+              Exame inicial: bom estado geral, orientada, corada e hidratada. PA
+              120/80 mmHg, FC 72 bpm, temperatura 36,5 °C e exame neurológico
+              sem déficit focal.
+            </p>
+          </section>
+          <details class="vital-card">
+            <summary>
+              <span class="vital-card__title" id="vitals-title">
+                <span class="vital-card__summary-icon" aria-hidden="true"
+                  ><svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                  >
+                    <path d="M3 12h4l2-6 4 12 2-6h6" />
+                    <path
+                      d="M19 4h1a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1"
+                    /></svg
+                ></span>
+                <span
+                  ><strong>Sinais vitais</strong
+                  ><small>4 medidas registradas</small></span
+                >
+              </span>
+              <span class="vital-card__chevron" aria-hidden="true"
+                ><svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="m6 9 6 6 6-6" /></svg
+              ></span>
+            </summary>
+            <dl aria-labelledby="vitals-title">
+              <div>
+                <span class="vital-icon vital-icon--pressure" aria-hidden="true"
+                  ><svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                  >
+                    <circle cx="12" cy="12" r="8" />
+                    <path d="M12 12 16 8M7.5 17h9" /></svg
+                ></span>
+                <dt>PA</dt>
+                <dd data-vital-pa>120/80 <small>mmHg</small></dd>
+              </div>
+              <div>
+                <span class="vital-icon vital-icon--heart" aria-hidden="true"
+                  ><svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                  >
+                    <path
+                      d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"
+                    />
+                    <path d="M4 12h4l1.5-3 3 6 1.5-3h6" /></svg
+                ></span>
+                <dt>FC</dt>
+                <dd data-vital-fc>72 <small>bpm</small></dd>
+              </div>
+              <div>
+                <span
+                  class="vital-icon vital-icon--temperature"
+                  aria-hidden="true"
+                  ><svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                  >
+                    <path d="M14 14.8V5a4 4 0 0 0-8 0v9.8a6 6 0 1 0 8 0Z" />
+                    <path d="M10 6v10" /></svg
+                ></span>
+                <dt>Temperatura</dt>
+                <dd data-vital-temperatura>36,5 <small>°C</small></dd>
+              </div>
+              <div>
+                <span class="vital-icon vital-icon--pain" aria-hidden="true"
+                  ><svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                  >
+                    <circle cx="12" cy="12" r="9" />
+                    <path
+                      d="M8.5 9h.01M15.5 9h.01M8 16c1-1.3 2.3-2 4-2s3 .7 4 2"
+                    /></svg
+                ></span>
+                <dt>Dor</dt>
+                <dd data-vital-dor>8/10 <small>intensa</small></dd>
+              </div>
+            </dl>
+          </details>
+          <section class="clinical-notes" aria-labelledby="notes-title">
+            <div class="clinical-notes__laptop">
+              <div class="clinical-notes__screen">
+                <div class="clinical-notes__document">
+                  <label for="clinicalNotes"
+                    >Registre os achados importantes</label
+                  >
+                  <textarea
+                    id="clinicalNotes"
+                    data-clinical-notes
+                    rows="8"
+                    maxlength="4000"
+                    placeholder="Ex.: Queixa principal, início dos sintomas, sinais de alerta, hipóteses e próximos passos..."
+                  ></textarea>
+                  <div class="clinical-notes__meta">
+                    <span data-notes-status>Salvo automaticamente</span>
+                    <span data-notes-count>0 / 4000</span>
+                  </div>
+                </div>
+              </div>
+              <div class="clinical-notes__base" aria-hidden="true">
+                <span></span>
+              </div>
+            </div>
+          </section>
+        </aside>
+      </main>
+      <dialog
+        class="finish-dialog"
+        data-finish-dialog
+        aria-labelledby="finish-dialog-title"
+      >
+        <h2 id="finish-dialog-title">Finalizar este caso?</h2>
+        <p>
+          Suas falas e a pontuação serão registradas. Você poderá consultar o
+          resultado no seu perfil.
+        </p>
+        <div class="finish-dialog__actions">
+          <button type="button" data-cancel-finish>Continuar conversa</button>
+          <button type="button" data-confirm-finish>Finalizar caso</button>
+        </div>
+      </dialog>
+    </div>
+    <script src="../assets/js/shared/components.js"></script>
+    <script src="../assets/js/shared/interactions.js"></script>
+    <script src="../assets/js/shared/activity-data.js"></script>
+    <script src="../assets/js/shared/rooms.js"></script>
+    <script src="../assets/js/student/progress.js"></script>
+    <script src="../assets/js/student/agent.js"></script>
+    <script src="../assets/js/student/simulation.js"></script>
+  </body>
+</html>

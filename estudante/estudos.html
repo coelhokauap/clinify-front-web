@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Clinify | Estudos: ambiente educacional Clinify para aprendizagem e prática clínica.">
+    <link rel="icon" type="image/svg+xml" href="../assets/img/clinify.svg">
+
+    <title>Clinify | Estudos</title>
+
+
+    <link rel="stylesheet" href="../assets/css/root.css">
+    <link rel="stylesheet" href="../assets/css/estrutura.css">
+    <link rel="stylesheet" href="../assets/css/estudos.css">
+</head>
+
+<body class="pagina-estudos" data-area="estudante">
+
+    <div class="app-shell">
+
+
+        <aside class="sidebar">
+            <button class="sidebar__toggle" type="button" data-sidebar-collapse aria-label="Recolher menu">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6" /></svg>
+            </button>
+
+            <div class="sidebar__brand">
+                <span class="sidebar__mark"><img src="../assets/img/clinify.svg" alt="" width="38" height="38"></span>
+                <span class="sidebar__brand-text">
+                    <span class="sidebar__eyebrow">Hospital Moinhos de Vento</span>
+                    <span class="sidebar__wordmark">Clinify</span>
+                </span>
+            </div>
+
+            <nav aria-label="Navegação principal"><ul class="sidebar__nav" data-navigation></ul></nav>
+        </aside>
+
+        <div class="sidebar__backdrop" data-sidebar-backdrop></div>
+
+
+        <div class="app-main">
+
+
+            <header class="topbar">
+                <button class="topbar__menu-btn" type="button" data-sidebar-mobile-toggle aria-label="Abrir menu">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="7" x2="20" y2="7" /><line x1="4" y1="12" x2="20" y2="12" /><line x1="4" y1="17" x2="20" y2="17" /></svg>
+                </button>
+
+                <div class="topbar__spacer"></div>
+
+                <button class="topbar__bell" type="button" aria-label="Notificações" id="bell-btn">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M6 8a6 6 0 0 1 12 0c0 5 2 6 2 6H4s2-1 2-6" />
+                        <path d="M10 20a2 2 0 0 0 4 0" />
+                    </svg>
+                    <span class="dot"></span>
+                </button>
+
+                <div class="notifications" id="notifications">
+                    <h4>Notificações</h4>
+                    <ul>
+                        <li>Nova mensagem de estudos</li>
+                        <li>Atualização de desempenho</li>
+                        <li>Simulação clínica disponível</li>
+                    </ul>
+                </div>
+
+
+                <a href="perfil.html" class="topbar__avatar" aria-label="Ir para o meu perfil" title="Meu perfil">
+                    <span class="topbar__avatar-initials">ES</span>
+                </a>
+            </header>
+
+
+            <main class="studies-page">
+
+                <div class="studies-header">
+                    <h1 class="page-title">Área de Estudos</h1>
+                    <p class="page-subtitle">Escolha uma matéria para acessar seus estudos e acompanhar seu progresso</p>
+                </div>
+
+
+                <section class="study-filters">
+
+                    <div class="filter-search">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="7" />
+                            <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                        </svg>
+                        <input type="search" id="study-search" placeholder="Buscar especialidade…" aria-label="Buscar especialidade">
+                    </div>
+
+                    <div class="filter-divider" aria-hidden="true"></div>
+
+                    <div class="filter-select">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 5h16l-6.5 7.5V18l-3 2v-7.5L4 5z" />
+                        </svg>
+                        <select id="specialty-filter" aria-label="Filtrar por especialidade">
+                            <option value="all">Todas as especialidades</option>
+                            <option value="cardiologia">Cardiologia</option>
+                            <option value="pneumologia">Pneumologia</option>
+                            <option value="neurologia">Neurologia</option>
+                            <option value="gastroenterologia">Gastroenterologia</option>
+                            <option value="endocrinologia">Endocrinologia</option>
+                            <option value="histologia">Histologia</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-divider" aria-hidden="true"></div>
+
+                    <div class="filter-select filter-select--order">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M7 4v16M7 4 4 7M7 4l3 3" />
+                            <path d="M17 20V4M17 20l-3-3M17 20l3-3" />
+                        </svg>
+                        <select id="order-filter" aria-label="Ordenar estudos">
+                            <option value="default">Ordenar por</option>
+                            <option value="name">Nome</option>
+                            <option value="semester">Semestre</option>
+                            <option value="questions">Quantidade de questões</option>
+                        </select>
+                    </div>
+
+                </section>
+
+                <p class="study-empty" id="study-empty" hidden>Nenhuma especialidade encontrada para essa busca.</p>
+
+
+                <section class="study-grid" id="study-grid">
+
+
+                    <article class="study-card"
+                        data-specialty="cardiologia"
+                        data-name="Cardiologia"
+                        data-semester="6"
+                        data-questions="3"
+                        data-progress="0">
+                        <a class="study-card__main" href="cardiologia.html?especialidade=cardiologia&amp;tipo=conteudo" aria-label="Estudar Cardiologia">
+                            <div class="study-card__header">
+                                <div class="study-icon study-icon--red" data-materia-icon="cardiologia"></div>
+                                <div>
+                                    <h2>Cardiologia</h2>
+                                    <span class="study-card__meta"><span class="study-tag">6° semestre</span>3 questões</span>
+                                </div>
+                            </div>
+
+                            <div class="study-progress" aria-label="62% do conteúdo concluído">
+                                <div class="study-progress__bar"><span></span></div>
+                                <span class="study-progress__label">62%</span>
+                            </div>
+
+                            <span class="study-card__open">Abrir estudos <span aria-hidden="true">→</span></span>
+                        </a>
+                        <a class="study-card__cases" href="casos.html?materia=cardiologia">Ver casos desta matéria <span aria-hidden="true">→</span></a>
+                    </article>
+
+
+
+                    <article class="study-card"
+                        data-specialty="pneumologia"
+                        data-name="Pneumologia"
+                        data-semester="3"
+                        data-questions="0"
+                        data-progress="35">
+                        <a class="study-card__main" href="cardiologia.html?especialidade=pneumologia&amp;tipo=conteudo" aria-label="Estudar Pneumologia">
+                            <div class="study-card__header">
+                                <div class="study-icon study-icon--blue" data-materia-icon="pneumologia"></div>
+                                <div>
+                                    <h2>Pneumologia</h2>
+                                    <span class="study-card__meta"><span class="study-tag">3° semestre</span>Em preparação</span>
+                                </div>
+                            </div>
+
+                            <div class="study-progress" aria-label="35% do conteúdo concluído">
+                                <div class="study-progress__bar"><span></span></div>
+                                <span class="study-progress__label">35%</span>
+                            </div>
+
+                            <span class="study-card__open">Abrir estudos <span aria-hidden="true">→</span></span>
+                        </a>
+                        <a class="study-card__cases" href="casos.html?materia=pneumologia">Ver casos desta matéria <span aria-hidden="true">→</span></a>
+                    </article>
+
+
+
+                    <article class="study-card"
+                        data-specialty="neurologia"
+                        data-name="Neurologia"
+                        data-semester="7"
+                        data-questions="0"
+                        data-progress="18">
+                        <a class="study-card__main" href="cardiologia.html?especialidade=neurologia&amp;tipo=conteudo" aria-label="Estudar Neurologia">
+                            <div class="study-card__header">
+                                <div class="study-icon study-icon--purple" data-materia-icon="neurologia"></div>
+                                <div>
+                                    <h2>Neurologia</h2>
+                                    <span class="study-card__meta"><span class="study-tag">7° semestre</span>Em preparação</span>
+                                </div>
+                            </div>
+
+                            <div class="study-progress" aria-label="18% do conteúdo concluído">
+                                <div class="study-progress__bar"><span></span></div>
+                                <span class="study-progress__label">18%</span>
+                            </div>
+
+                            <span class="study-card__open">Abrir estudos <span aria-hidden="true">→</span></span>
+                        </a>
+                        <a class="study-card__cases" href="casos.html?materia=neurologia">Ver casos desta matéria <span aria-hidden="true">→</span></a>
+                    </article>
+
+
+
+                    <article class="study-card"
+                        data-specialty="gastroenterologia"
+                        data-name="Gastroenterologia"
+                        data-semester="4"
+                        data-questions="0"
+                        data-progress="80">
+                        <a class="study-card__main" href="cardiologia.html?especialidade=gastroenterologia&amp;tipo=conteudo" aria-label="Estudar Gastroenterologia">
+                            <div class="study-card__header">
+                                <div class="study-icon study-icon--green" data-materia-icon="gastroenterologia"></div>
+                                <div>
+                                    <h2>Gastroenterologia</h2>
+                                    <span class="study-card__meta"><span class="study-tag">4° semestre</span>Em preparação</span>
+                                </div>
+                            </div>
+
+                            <div class="study-progress" aria-label="80% do conteúdo concluído">
+                                <div class="study-progress__bar"><span></span></div>
+                                <span class="study-progress__label">80%</span>
+                            </div>
+
+                            <span class="study-card__open">Abrir estudos <span aria-hidden="true">→</span></span>
+                        </a>
+                        <a class="study-card__cases" href="casos.html?materia=gastroenterologia">Ver casos desta matéria <span aria-hidden="true">→</span></a>
+                    </article>
+
+
+
+                    <article class="study-card"
+                        data-specialty="endocrinologia"
+                        data-name="Endocrinologia"
+                        data-semester="5"
+                        data-questions="0"
+                        data-progress="47">
+                        <a class="study-card__main" href="cardiologia.html?especialidade=endocrinologia&amp;tipo=conteudo" aria-label="Estudar Endocrinologia">
+                            <div class="study-card__header">
+                                <div class="study-icon study-icon--orange" data-materia-icon="endocrinologia"></div>
+                                <div>
+                                    <h2>Endocrinologia</h2>
+                                    <span class="study-card__meta"><span class="study-tag">5° semestre</span>Em preparação</span>
+                                </div>
+                            </div>
+
+                            <div class="study-progress" aria-label="47% do conteúdo concluído">
+                                <div class="study-progress__bar"><span></span></div>
+                                <span class="study-progress__label">47%</span>
+                            </div>
+
+                            <span class="study-card__open">Abrir estudos <span aria-hidden="true">→</span></span>
+                        </a>
+                        <a class="study-card__cases" href="casos.html?materia=endocrinologia">Ver casos desta matéria <span aria-hidden="true">→</span></a>
+                    </article>
+
+
+
+                    <article class="study-card"
+                        data-specialty="histologia"
+                        data-name="Histologia"
+                        data-semester="1"
+                        data-questions="0"
+                        data-progress="93">
+                        <a class="study-card__main" href="cardiologia.html?especialidade=histologia&amp;tipo=conteudo" aria-label="Estudar Histologia">
+                            <div class="study-card__header">
+                                <div class="study-icon study-icon--yellow" data-materia-icon="histologia"></div>
+                                <div>
+                                    <h2>Histologia</h2>
+                                    <span class="study-card__meta"><span class="study-tag">1° semestre</span>Em preparação</span>
+                                </div>
+                            </div>
+
+                            <div class="study-progress" aria-label="93% do conteúdo concluído">
+                                <div class="study-progress__bar"><span></span></div>
+                                <span class="study-progress__label">93%</span>
+                            </div>
+
+                            <span class="study-card__open">Abrir estudos <span aria-hidden="true">→</span></span>
+                        </a>
+                        <a class="study-card__cases" href="casos.html?materia=histologia">Ver casos desta matéria <span aria-hidden="true">→</span></a>
+                    </article>
+
+                </section>
+
+            </main>
+        </div>
+    </div>
+
+    <script src="../assets/js/shared/components.js"></script>
+    <script src="../assets/js/shared/interactions.js"></script>
+    <script src="../assets/js/shared/layout.js"></script>
+    <script src="../assets/js/student/studies.js"></script>
+</body>
+
+</html>

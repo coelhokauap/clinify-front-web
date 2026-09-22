@@ -1,0 +1,35 @@
+/* Identidade Clinify inspirada na linguagem institucional do HMV:
+   azul como base; roxo, rosa e laranja em pontos de destaque. */
+:root {
+    --ink: #243a56;
+    --ink-strong: #142945;
+    --primary: #185a9c;
+    --primary-dark: #123f72;
+    --primary-soft: #eaf3fd;
+    --accent: #704fb3;
+    --accent-soft: #f2edfa;
+    --warm: #dc7545;
+    --warm-soft: #fff1e8;
+    --rose: #ba4779;
+    --rose-soft: #fff0f6;
+    --success: #087565;
+    --success-soft: #e8f6f1;
+    --bg: #f6f8fc;
+    --surface: #ffffff;
+    --surface-alt: #eff3f9;
+    --muted: #576a80;
+    --border: #dce5f0;
+    --border-strong: #bfcddd;
+    --shadow: 0 16px 36px rgba(18, 47, 84, 0.1);
+    --shadow-soft: 0 6px 20px rgba(18, 47, 84, 0.06);
+    --radius: 14px;
+    --radius-card: 20px;
+    --radius-sheet: 24px;
+    --motion-ease: cubic-bezier(0.22, 1, 0.36, 1);
+    --sidebar-w: 292px;
+    --sidebar-w-collapsed: 88px;
+    --topbar-h: 70px;
+    --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Arial, sans-serif;
+    --font-display: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Arial, sans-serif;
+    --focus-ring: #185a9c;
+}

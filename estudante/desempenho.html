@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Clinify | Desempenho: ambiente educacional Clinify para aprendizagem e prática clínica.">
+    <link rel="icon" type="image/svg+xml" href="../assets/img/clinify.svg">
+
+    <title>Clinify | Desempenho</title>
+
+
+    <link rel="stylesheet" href="../assets/css/root.css">
+    <link rel="stylesheet" href="../assets/css/estrutura.css">
+
+</head>
+
+<body class="pagina-desempenho" data-area="estudante">
+    <div class="app-shell">
+
+
+        <aside class="sidebar">
+            <button class="sidebar__toggle" type="button" data-sidebar-collapse aria-label="Recolher menu">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6" /></svg>
+            </button>
+
+            <div class="sidebar__brand">
+                <span class="sidebar__mark"><img src="../assets/img/clinify.svg" alt="" width="38" height="38"></span>
+                <span class="sidebar__brand-text">
+                    <span class="sidebar__eyebrow">Hospital Moinhos de Vento</span>
+                    <span class="sidebar__wordmark">Clinify</span>
+                </span>
+            </div>
+
+            <nav aria-label="Navegação principal"><ul class="sidebar__nav" data-navigation></ul></nav>
+        </aside>
+
+
+        <div class="sidebar__backdrop" data-sidebar-backdrop></div>
+
+
+        <div class="app-main">
+
+
+            <header class="topbar">
+                <button class="topbar__menu-btn" type="button" data-sidebar-mobile-toggle aria-label="Abrir menu">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="7" x2="20" y2="7" /><line x1="4" y1="12" x2="20" y2="12" /><line x1="4" y1="17" x2="20" y2="17" /></svg>
+                </button>
+
+                <div class="topbar__spacer"></div>
+
+                <button class="topbar__bell" type="button" aria-label="Notificações">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 5 2 6 2 6H4s2-1 2-6" /><path d="M10 20a2 2 0 0 0 4 0" /></svg>
+                    <span class="dot"></span>
+                </button>
+
+                <a href="perfil.html" class="topbar__avatar" aria-label="Ir para o meu perfil" title="Meu perfil">
+                    <span class="topbar__avatar-initials">ES</span>
+                </a>
+            </header>
+
+            <main class="app-content">
+
+                <h1 class="page-title">Meu Desempenho</h1>
+                <p class="page-subtitle">Acompanhe suas estatísticas de aprendizado e evolução clínica</p>
+
+
+                <div class="stat-grid">
+                    <div class="stat-card">
+                            <span class="stat-card__icon stat-card__icon--purple">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" /><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" /><path d="M4 22h16" /><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22" /><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22" /><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z" /></svg>
+                            </span>
+                        <span class="stat-card__value">Nível 12</span>
+                        <span class="stat-card__label">Nível de Experiência</span>
+                        <div class="stat-card__bar"><span class="bar--60"></span></div>
+                        <span class="stat-card__hint">2.400 / 4.000 XP para o Nível 13</span>
+                    </div>
+
+                    <div class="stat-card">
+                            <span class="stat-card__icon stat-card__icon--gold">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z" /></svg>
+                            </span>
+                        <span class="stat-card__value">14.400</span>
+                        <span class="stat-card__label">XP Total Acumulado</span>
+                        <span class="stat-card__hint stat-card__hint--up">+850 XP esta semana</span>
+                    </div>
+
+                    <div class="stat-card">
+                            <span class="stat-card__icon stat-card__icon--lilac">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5" /></svg>
+                            </span>
+                        <span class="stat-card__value">89%</span>
+                        <span class="stat-card__label">Taxa de Acertos</span>
+                        <span class="stat-card__hint">Média das últimas 10 simulações</span>
+                    </div>
+
+                    <div class="stat-card">
+                            <span class="stat-card__icon stat-card__icon--blue">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>
+                            </span>
+                        <span class="stat-card__value">38</span>
+                        <span class="stat-card__label">Simulações Concluídas</span>
+                        <span class="stat-card__hint">Tempo médio: 14 min</span>
+                    </div>
+                </div>
+
+
+                <section class="performance-section">
+                    <div class="performance-section__header">
+                        <h2 class="performance-section__title">Áreas Mais Simuladas</h2>
+                        <span class="performance-section__subtitle">Distribuição por especialidade clínica</span>
+                    </div>
+
+                    <div class="specialties-list">
+                        <div class="specialty-item">
+                            <div class="specialty-item__info">
+                                <span class="specialty-item__name">Cardiologia</span>
+                                <span class="specialty-item__count">14 simulações (37%)</span>
+                            </div>
+                            <div class="specialty-item__bar-container">
+                                <div class="specialty-item__bar bar--37"></div>
+                            </div>
+                        </div>
+
+                        <div class="specialty-item">
+                            <div class="specialty-item__info">
+                                <span class="specialty-item__name">Neurologia</span>
+                                <span class="specialty-item__count">10 simulações (26%)</span>
+                            </div>
+                            <div class="specialty-item__bar-container">
+                                <div class="specialty-item__bar bar--26"></div>
+                            </div>
+                        </div>
+
+                        <div class="specialty-item">
+                            <div class="specialty-item__info">
+                                <span class="specialty-item__name">Pediatria</span>
+                                <span class="specialty-item__count">7 simulações (18%)</span>
+                            </div>
+                            <div class="specialty-item__bar-container">
+                                <div class="specialty-item__bar bar--18"></div>
+                            </div>
+                        </div>
+
+                        <div class="specialty-item">
+                            <div class="specialty-item__info">
+                                <span class="specialty-item__name">Clínica Médica</span>
+                                <span class="specialty-item__count">5 simulações (13%)</span>
+                            </div>
+                            <div class="specialty-item__bar-container">
+                                <div class="specialty-item__bar bar--13"></div>
+                            </div>
+                        </div>
+
+                        <div class="specialty-item">
+                            <div class="specialty-item__info">
+                                <span class="specialty-item__name">Pneumologia</span>
+                                <span class="specialty-item__count">2 simulações (6%)</span>
+                            </div>
+                            <div class="specialty-item__bar-container">
+                                <div class="specialty-item__bar bar--6"></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </main>
+        </div>
+    </div>
+
+<script src="../assets/js/shared/components.js"></script>
+    <script src="../assets/js/shared/interactions.js"></script>
+    <script src="../assets/js/shared/layout.js"></script>
+</body>
+
+</html>

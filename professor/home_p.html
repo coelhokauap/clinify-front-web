@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Clinify | Início: ambiente educacional Clinify para aprendizagem e prática clínica.">
+    <link rel="icon" type="image/svg+xml" href="../assets/img/clinify.svg">
+
+    <title>Clinify | Início</title>
+
+
+    <link rel="stylesheet" href="../assets/css/root.css">
+    <link rel="stylesheet" href="../assets/css/estrutura.css">
+
+</head>
+
+<body class="pagina-painel" data-area="professor">
+
+    <div class="app-shell">
+
+
+        <aside class="sidebar">
+            <button class="sidebar__toggle" type="button" data-sidebar-collapse aria-label="Recolher menu">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6" /></svg>
+            </button>
+
+            <div class="sidebar__brand">
+                <span class="sidebar__mark"><img src="../assets/img/clinify.svg" alt="" width="38" height="38"></span>
+                <span class="sidebar__brand-text">
+                    <span class="sidebar__eyebrow">Hospital Moinhos de Vento</span>
+                    <span class="sidebar__wordmark">Clinify</span>
+                </span>
+            </div>
+
+            <nav aria-label="Navegação principal"><ul class="sidebar__nav" data-navigation></ul></nav>
+        </aside>
+
+        <div class="sidebar__backdrop" data-sidebar-backdrop></div>
+
+
+        <div class="app-main">
+
+
+            <header class="topbar">
+                <button class="topbar__menu-btn" type="button" data-sidebar-mobile-toggle aria-label="Abrir menu">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="7" x2="20" y2="7" /><line x1="4" y1="12" x2="20" y2="12" /><line x1="4" y1="17" x2="20" y2="17" /></svg>
+                </button>
+
+                <div class="topbar__spacer"></div>
+
+                <button class="topbar__bell" type="button" aria-label="Notificações" id="bell-btn">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M6 8a6 6 0 0 1 12 0c0 5 2 6 2 6H4s2-1 2-6" />
+                        <path d="M10 20a2 2 0 0 0 4 0" />
+                    </svg>
+                    <span class="dot"></span>
+                </button>
+
+                <div class="notifications" id="notifications">
+                    <h4>Notificações</h4>
+                    <ul>
+                        <li>2 alunos concluíram Cardiologia essa semana</li>
+                        <li>Nova tentativa registrada em Pneumologia</li>
+                        <li>Simulação SIM-7K21 tem novos acessos</li>
+                    </ul>
+                </div>
+
+                <a href="perfil.html" class="topbar__avatar" aria-label="Ir para o meu perfil" title="Meu perfil">
+                    <span class="topbar__avatar-initials">PR</span>
+                </a>
+            </header>
+
+
+            <main class="panel-page">
+
+                <div class="page-header">
+                    <div>
+                        <h1 class="page-title">Olá, professor(a)</h1>
+                        <p class="page-subtitle">Aqui está um resumo das suas turmas e da atividade recente dos alunos</p>
+                    </div>
+                </div>
+
+
+                <section class="stat-grid" id="stat-grid">
+                    <div class="stat-card">
+                        <p class="stat-card__label">Turmas ativas</p>
+                        <p class="stat-card__value" id="stat-turmas">—</p>
+                    </div>
+                    <div class="stat-card">
+                        <p class="stat-card__label">Alunos matriculados</p>
+                        <p class="stat-card__value" id="stat-alunos">—</p>
+                    </div>
+                    <div class="stat-card">
+                        <p class="stat-card__label">Simulações criadas</p>
+                        <p class="stat-card__value" id="stat-simulacoes">—</p>
+                    </div>
+                </section>
+
+
+                <section class="section-block section-block--spaced">
+                    <div class="section-title-row">
+                        <h2 class="section-title">Minhas turmas</h2>
+                        <a href="turmas.html" class="btn btn--ghost btn--sm">Ver todas</a>
+                    </div>
+                    <div class="stat-grid" id="turmas-preview"></div>
+                </section>
+
+
+                <section>
+                    <h2 class="section-title">Atividade recente</h2>
+                    <div class="data-table-wrap">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Aluno</th>
+                                    <th scope="col">Ação</th>
+                                    <th scope="col">Quando</th>
+                                </tr>
+                            </thead>
+                            <tbody id="atividade-recente"></tbody>
+                        </table>
+                    </div>
+                </section>
+
+            </main>
+        </div>
+    </div>
+
+    <script src="../assets/js/shared/components.js"></script>
+    <script src="../assets/js/shared/interactions.js"></script>
+    <script src="../assets/js/shared/layout.js"></script>
+    <script src="../assets/js/shared/mock-data.js"></script>
+    <script src="../assets/js/professor/home.js"></script>
+</body>
+
+</html>
