@@ -211,6 +211,19 @@
                 </button>
                 <button
                   type="button"
+                  data-materia-filter="anatomia"
+                  aria-pressed="false"
+                >
+                  <span
+                    class="study-icon study-icon--purple"
+                    aria-hidden="true"
+                    data-materia-icon="anatomia"
+                  ></span>
+                  <strong>Anatomia</strong
+                  ><small data-materia-count="anatomia"></small>
+                </button>
+                <button
+                  type="button"
                   data-materia-filter="pneumologia"
                   aria-pressed="false"
                 >
@@ -302,7 +315,7 @@
               </button>
             </div>
 
-            <p class="case-counter" data-case-counter>9 casos encontrados</p>
+            <p class="case-counter" data-case-counter>13 casos encontrados</p>
 
             <div class="case-list">
               <article
@@ -539,6 +552,110 @@
                   >Iniciar</a
                 >
               </article>
+
+              <article
+                class="case-card"
+                data-case
+                data-case-id="anatomia-ombro"
+                data-status="available"
+                data-materia="anatomia"
+                data-difficulty="medium"
+              >
+                <span
+                  class="case-card__avatar avatar--joao"
+                  aria-hidden="true"
+                ></span>
+                <div class="case-card__body">
+                  <small>Anatomia · Caso disponível</small>
+                  <h2>
+                    Homem, 34 anos, dor no ombro ao elevar o braço após esforço
+                  </h2>
+                  <span class="difficulty difficulty--medium">Médio</span>
+                </div>
+                <a
+                  class="continue-btn"
+                  href="simulacao.html?caso=anatomia-ombro&amp;materia=anatomia"
+                  >Iniciar</a
+                >
+              </article>
+
+              <article
+                class="case-card"
+                data-case
+                data-case-id="anatomia-coluna"
+                data-status="available"
+                data-materia="anatomia"
+                data-difficulty="hard"
+              >
+                <span
+                  class="case-card__avatar avatar--maria"
+                  aria-hidden="true"
+                ></span>
+                <div class="case-card__body">
+                  <small>Anatomia · Caso disponível</small>
+                  <h2>
+                    Mulher, 52 anos, dor lombar irradiada para a perna direita
+                  </h2>
+                  <span class="difficulty difficulty--hard">Difícil</span>
+                </div>
+                <a
+                  class="continue-btn"
+                  href="simulacao.html?caso=anatomia-coluna&amp;materia=anatomia"
+                  >Iniciar</a
+                >
+              </article>
+
+              <article
+                class="case-card"
+                data-case
+                data-case-id="gastro-dor"
+                data-status="available"
+                data-materia="gastroenterologia"
+                data-difficulty="easy"
+              >
+                <span
+                  class="case-card__avatar avatar--joao"
+                  aria-hidden="true"
+                ></span>
+                <div class="case-card__body">
+                  <small>Gastroenterologia · Caso disponível</small>
+                  <h2>
+                    Homem, 39 anos, dor na parte superior do abdômen e náusea
+                  </h2>
+                  <span class="difficulty difficulty--easy">Fácil</span>
+                </div>
+                <a
+                  class="continue-btn"
+                  href="simulacao.html?caso=gastro-dor&amp;materia=gastroenterologia"
+                  >Iniciar</a
+                >
+              </article>
+
+              <article
+                class="case-card"
+                data-case
+                data-case-id="histo-biopsia"
+                data-status="available"
+                data-materia="histologia"
+                data-difficulty="medium"
+              >
+                <span
+                  class="case-card__avatar avatar--maria"
+                  aria-hidden="true"
+                ></span>
+                <div class="case-card__body">
+                  <small>Histologia · Caso disponível</small>
+                  <h2>
+                    Mulher, 47 anos, dúvidas sobre o resultado de uma biópsia
+                  </h2>
+                  <span class="difficulty difficulty--medium">Médio</span>
+                </div>
+                <a
+                  class="continue-btn"
+                  href="simulacao.html?caso=histo-biopsia&amp;materia=histologia"
+                  >Iniciar</a
+                >
+              </article>
             </div>
 
             <div class="empty-state" data-empty-state hidden>
@@ -606,6 +723,7 @@
                         required
                       >
                         <option value="cardiologia">Cardiologia</option>
+                        <option value="anatomia">Anatomia</option>
                         <option value="pneumologia">Pneumologia</option>
                         <option value="neurologia" selected>Neurologia</option>
                         <option value="gastroenterologia">

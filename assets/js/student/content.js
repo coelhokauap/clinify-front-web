@@ -86,6 +86,81 @@ const conteudos = {
 
         ]
 
+    },
+
+    anatomia: {
+
+        modulo: "Módulo 01",
+
+        titulo: "Introdução à",
+        tituloDestaque: "Anatomia",
+
+        descricao:
+            "Conheça a organização geral do corpo humano e os principais sistemas e estruturas estudados na anatomia.",
+
+        duracao: "40 min",
+        nivel: "Nível básico",
+
+        professor: {
+            iniciais: "MA",
+            nome: "Profa. Mariana Alves",
+            especialidade: "Professora de Anatomia · Faculdade de Medicina"
+        },
+
+        video: {
+            titulo: "Introdução à anatomia humana",
+            src: "",
+            thumbnail: ""
+        },
+
+        introducao: {
+            titulo: "Organização do corpo humano",
+
+            paragrafos: [
+                "A anatomia é a área da medicina que estuda a estrutura e a organização do corpo humano, desde o nível celular até os órgãos e sistemas.",
+                "O corpo é organizado em níveis: células, tecidos, órgãos e sistemas, que trabalham juntos para manter o funcionamento do organismo."
+            ],
+
+            conceitoChave:
+                "O corpo humano é dividido em sistemas — como o cardiovascular, o respiratório e o muscular — que atuam de forma integrada."
+        },
+
+        questoes: [
+            {
+                pergunta:
+                    "Qual é o principal objeto de estudo da anatomia?",
+                alternativas: [
+                    "As doenças infecciosas.",
+                    "A estrutura e organização do corpo humano.",
+                    "O funcionamento psicológico do indivíduo.",
+                    "A composição química dos medicamentos."
+                ],
+                correta: 1
+            },
+            {
+                pergunta:
+                    "Qual é a ordem correta de organização do corpo, do nível mais simples ao mais complexo?",
+                alternativas: [
+                    "Órgão → Tecido → Célula → Sistema.",
+                    "Célula → Tecido → Órgão → Sistema.",
+                    "Sistema → Órgão → Célula → Tecido.",
+                    "Tecido → Célula → Sistema → Órgão."
+                ],
+                correta: 1
+            },
+            {
+                pergunta:
+                    "Qual das opções abaixo é um exemplo de sistema do corpo humano?",
+                alternativas: [
+                    "Sistema muscular.",
+                    "Sistema binário.",
+                    "Sistema operacional.",
+                    "Sistema solar."
+                ],
+                correta: 0
+            }
+        ]
+
     }
 
 };

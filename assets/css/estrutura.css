@@ -1348,3 +1348,226 @@ button:disabled { opacity: 0.65; cursor: not-allowed; }
     cursor: pointer;
 }
 .sidebar__export:hover { color: var(--primary-dark); }
+
+/* Evolução do desempenho na página inicial do estudante. */
+:where(.pagina-inicio) .evolucao-desempenho {
+    margin-top: 36px;
+}
+
+:where(.pagina-inicio) .evolucao-cabecalho {
+    max-width: 760px;
+    margin-bottom: 20px;
+}
+
+:where(.pagina-inicio) .evolucao-cabecalho h2 {
+    margin: 0 0 6px;
+    color: var(--ink-strong);
+    font-family: var(--font-display);
+    font-size: clamp(20px, 2vw, 24px);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+:where(.pagina-inicio) .evolucao-cabecalho p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+:where(.pagina-inicio) .evolucao-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+:where(.pagina-inicio) .evolucao-card {
+    min-width: 0;
+    padding: clamp(16px, 2vw, 24px);
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-card);
+    background: var(--surface);
+    box-shadow: var(--shadow-soft);
+}
+
+:where(.pagina-inicio) .evolucao-card__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+:where(.pagina-inicio) .evolucao-card__head h3 {
+    margin: 0;
+    color: var(--ink-strong);
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.35;
+}
+
+:where(.pagina-inicio) .evolucao-badge {
+    min-height: 28px;
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 11px;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1.2;
+    white-space: nowrap;
+}
+
+:where(.pagina-inicio) .evolucao-badge--rapido {
+    color: var(--success);
+    background: var(--success-soft);
+    border-color: rgba(8, 117, 101, 0.16);
+}
+
+:where(.pagina-inicio) .evolucao-badge--lenta {
+    color: var(--primary-dark);
+    background: var(--primary-soft);
+    border-color: rgba(24, 90, 156, 0.14);
+}
+
+:where(.pagina-inicio) .grafico-container {
+    width: 100%;
+    min-width: 0;
+    padding: 10px 10px 4px;
+    overflow-x: auto;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: linear-gradient(180deg, var(--surface), var(--surface-alt));
+    scrollbar-width: thin;
+    scrollbar-color: var(--border-strong) transparent;
+}
+
+:where(.pagina-inicio) .grafico-svg {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+:where(.pagina-inicio) .grafico-legenda {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 18px;
+    margin: 8px 4px 6px;
+}
+
+:where(.pagina-inicio) .grafico-legenda span {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+:where(.pagina-inicio) .grafico-legenda i {
+    width: 9px;
+    height: 9px;
+    display: inline-block;
+    flex: 0 0 9px;
+    border-radius: 50%;
+}
+
+:where(.pagina-inicio) .evolucao-metrics {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+    margin: 16px 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+:where(.pagina-inicio) .evolucao-metrics li {
+    min-width: 0;
+    min-height: 68px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    padding: 10px 8px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--surface-alt);
+    text-align: center;
+}
+
+:where(.pagina-inicio) .evolucao-metrics strong {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    color: var(--ink-strong);
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+:where(.pagina-inicio) .evolucao-metrics span {
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.35;
+}
+
+:where(.pagina-inicio) .evolucao-card--comparativo {
+    margin-top: 0;
+}
+
+:where(.pagina-inicio) .evolucao-card--comparativo .grafico-container {
+    padding-top: 14px;
+}
+
+:where(.pagina-inicio) .evolucao-nota {
+    margin: 16px 0 0;
+    padding: 14px 16px;
+    border-left: 3px solid var(--accent);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    color: var(--muted);
+    background: var(--accent-soft);
+    font-size: 13px;
+    line-height: 1.65;
+}
+
+@media (min-width: 881px) {
+    :where(.pagina-inicio) .evolucao-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 560px) {
+    :where(.pagina-inicio) .evolucao-desempenho {
+        margin-top: 30px;
+    }
+
+    :where(.pagina-inicio) .evolucao-card__head {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    :where(.pagina-inicio) .grafico-svg {
+        width: 500px;
+        max-width: none;
+    }
+
+    :where(.pagina-inicio) .evolucao-card--comparativo .grafico-legenda {
+        position: sticky;
+        left: 0;
+        width: max-content;
+    }
+}
+
+@media (max-width: 390px) {
+    :where(.pagina-inicio) .evolucao-metrics {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    :where(.pagina-inicio) .evolucao-metrics li {
+        min-height: 58px;
+    }
+}

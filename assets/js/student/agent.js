@@ -21,6 +21,20 @@
             medicamentos: 'Não tomei remédio para essa dor.',
             contexto: 'Tenho pressão alta e meu pai teve problema no coração.'
         },
+        'anatomia-ombro': {
+            inicio: 'A dor começou ontem, depois que carreguei caixas pesadas.',
+            associados: 'Não tive febre nem formigamento, mas sinto fraqueza para levantar o braço.',
+            intensidade: 'A dor chega a 6 de 10 quando elevo o braço acima do ombro.',
+            medicamentos: 'Usei uma compressa fria, mas ainda não tomei remédio.',
+            contexto: 'A dor fica mais na parte lateral do ombro e melhora quando deixo o braço parado.'
+        },
+        'anatomia-coluna': {
+            inicio: 'Começou há três dias, depois de passar muito tempo sentada.',
+            associados: 'Sinto formigamento na perna direita, mas não perdi o controle da urina nem das fezes.',
+            intensidade: 'A dor está em 8 de 10 e piora quando me abaixo.',
+            medicamentos: 'Tomei um analgésico comum, com pouca melhora.',
+            contexto: 'A dor sai da lombar, passa pelo glúteo e desce pela parte de trás da perna.'
+        },
         'pneumo-fadiga': {
             inicio: 'A falta de ar começou há cerca de duas semanas e está piorando.',
             associados: 'Tenho tosse seca e cansaço ao subir escadas. Não tive desmaio.',
@@ -41,6 +55,20 @@
             intensidade: 'A dor no pé é leve, em torno de 3 de 10.',
             medicamentos: 'Uso remédio para pressão, mas nenhum para glicose.',
             contexto: 'Minha mãe tinha diabetes.'
+        },
+        'gastro-dor': {
+            inicio: 'Começou há uma semana e aparece principalmente depois das refeições.',
+            associados: 'Tenho náusea e sensação de estômago cheio, mas não vomitei sangue.',
+            intensidade: 'A queimação fica em torno de 5 de 10.',
+            medicamentos: 'Usei um antiácido e melhorei por algumas horas.',
+            contexto: 'Tenho comido fora com frequência e tomo bastante café.'
+        },
+        'histo-biopsia': {
+            inicio: 'Recebi o laudo da biópsia hoje e fiquei com dúvidas sobre os termos.',
+            associados: 'Não tenho sintomas novos desde a coleta do material.',
+            intensidade: 'Sinto apenas um desconforto leve no local, em torno de 1 de 10.',
+            medicamentos: 'Não estou usando medicamentos por causa da biópsia.',
+            contexto: 'Quero entender como a análise das células e dos tecidos ajuda no diagnóstico.'
         },
         'gineco-dor': {
             inicio: 'A dor começou há dois dias e o sangramento está irregular neste mês.',

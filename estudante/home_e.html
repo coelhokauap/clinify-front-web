@@ -3,80 +3,132 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Clinify | Home: ambiente educacional Clinify para aprendizagem e prática clínica.">
+    <meta
+      name="description"
+      content="Clinify | Home: ambiente educacional Clinify para aprendizagem e prática clínica."
+    />
 
     <title>Clinify | Home</title>
-    <link rel="icon" type="image/svg+xml" href="../assets/img/clinify.svg">
+    <link rel="icon" type="image/svg+xml" href="../assets/img/clinify.svg" />
 
-
-    <link rel="stylesheet" href="../assets/css/root.css">
+    <link rel="stylesheet" href="../assets/css/root.css" />
     <link rel="stylesheet" href="../assets/css/estrutura.css" />
-
   </head>
 
   <body class="pagina-inicio" data-area="estudante">
     <div class="app-shell">
+      <aside class="sidebar">
+        <button
+          class="sidebar__toggle"
+          type="button"
+          data-sidebar-collapse
+          aria-label="Recolher menu"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <polyline points="15 18 9 12 15 6" />
+          </svg>
+        </button>
 
+        <div class="sidebar__brand">
+          <span class="sidebar__mark"
+            ><img src="../assets/img/clinify.svg" alt="" width="38" height="38"
+          /></span>
+          <span class="sidebar__brand-text">
+            <span class="sidebar__eyebrow">Hospital Moinhos de Vento</span>
+            <span class="sidebar__wordmark">Clinify</span>
+          </span>
+        </div>
 
-        <aside class="sidebar">
-            <button class="sidebar__toggle" type="button" data-sidebar-collapse aria-label="Recolher menu">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6" /></svg>
-            </button>
+        <nav aria-label="Navegação principal">
+          <ul class="sidebar__nav" data-navigation></ul>
+        </nav>
+      </aside>
 
-            <div class="sidebar__brand">
-                <span class="sidebar__mark"><img src="../assets/img/clinify.svg" alt="" width="38" height="38"></span>
-                <span class="sidebar__brand-text">
-                    <span class="sidebar__eyebrow">Hospital Moinhos de Vento</span>
-                    <span class="sidebar__wordmark">Clinify</span>
-                </span>
-            </div>
+      <div class="sidebar__backdrop" data-sidebar-backdrop></div>
 
-            <nav aria-label="Navegação principal"><ul class="sidebar__nav" data-navigation></ul></nav>
-        </aside>
+      <div class="app-main">
+        <header class="topbar">
+          <button
+            class="topbar__menu-btn"
+            type="button"
+            data-sidebar-mobile-toggle
+            aria-label="Abrir menu"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <line x1="4" y1="7" x2="20" y2="7" />
+              <line x1="4" y1="12" x2="20" y2="12" />
+              <line x1="4" y1="17" x2="20" y2="17" />
+            </svg>
+          </button>
+          <div class="topbar__search">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="11" cy="11" r="7" />
+              <line x1="21" y1="21" x2="16.65" y2="16.65" />
+            </svg>
+            <input type="text" placeholder="Buscar…" aria-label="Buscar" />
+          </div>
 
-        <div class="sidebar__backdrop" data-sidebar-backdrop></div>
+          <div class="topbar__spacer"></div>
 
+          <button
+            class="topbar__bell"
+            type="button"
+            aria-label="Notificações"
+            id="bell-btn"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M6 8a6 6 0 0 1 12 0c0 5 2 6 2 6H4s2-1 2-6" />
+              <path d="M10 20a2 2 0 0 0 4 0" />
+            </svg>
+            <span class="dot"></span>
+          </button>
 
-        <div class="app-main">
+          <div class="notifications" id="notifications">
+            <h4>Notificações</h4>
+            <ul>
+              <li>Nova mensagem de estudos</li>
+              <li>Atualização de desempenho</li>
+              <li>Simulação clínica disponível</li>
+            </ul>
+          </div>
 
-
-            <header class="topbar">
-                <button class="topbar__menu-btn" type="button" data-sidebar-mobile-toggle aria-label="Abrir menu">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="7" x2="20" y2="7" /><line x1="4" y1="12" x2="20" y2="12" /><line x1="4" y1="17" x2="20" y2="17" /></svg>
-                </button>
-                <div class="topbar__search">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="11" cy="11" r="7" />
-                    <line x1="21" y1="21" x2="16.65" y2="16.65" />
-                  </svg>
-                  <input type="text" placeholder="Buscar…" aria-label="Buscar" />
-                </div>
-
-                <div class="topbar__spacer"></div>
-
-                <button class="topbar__bell" type="button" aria-label="Notificações" id="bell-btn">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M6 8a6 6 0 0 1 12 0c0 5 2 6 2 6H4s2-1 2-6" />
-                        <path d="M10 20a2 2 0 0 0 4 0" />
-                    </svg>
-                    <span class="dot"></span>
-                </button>
-
-                <div class="notifications" id="notifications">
-                    <h4>Notificações</h4>
-                    <ul>
-                        <li>Nova mensagem de estudos</li>
-                        <li>Atualização de desempenho</li>
-                        <li>Simulação clínica disponível</li>
-                    </ul>
-                </div>
-
-                <a href="perfil.html" class="topbar__avatar" aria-label="Ir para o meu perfil" title="Meu perfil">
-                    <span class="topbar__avatar-initials">ES</span>
-                </a>
-            </header>
-
+          <a
+            href="perfil.html"
+            class="topbar__avatar"
+            aria-label="Ir para o meu perfil"
+            title="Meu perfil"
+          >
+            <span class="topbar__avatar-initials">ES</span>
+          </a>
+        </header>
 
         <main class="app-content">
           <h1 class="page-title">Bem-vindo!</h1>
@@ -170,6 +222,109 @@
               <button type="button" class="stat-card__cta-btn">Iniciar</button>
             </div>
           </div>
+
+          <section
+            class="evolucao-desempenho"
+            aria-labelledby="evolucao-titulo"
+          >
+ 
+            <div class="evolucao-cabecalho">
+ 
+              <h2 id="evolucao-titulo">Evolução do seu desempenho</h2>
+ 
+              <p>Modelo baseado na curva de aprendizado (função logística) a partir das suas atividades em cada matéria</p>
+ 
+            </div>
+ 
+ 
+ 
+            <div class="evolucao-grid">
+ 
+ 
+ 
+              <!-- Card Cardiologia -->
+ 
+              <article class="evolucao-card">
+ 
+                <div class="evolucao-card__head">
+ 
+                  <h3>Cardiologia</h3>
+ 
+                  <span class="evolucao-badge evolucao-badge--rapido">Evolução rápida</span>
+ 
+                </div>
+ 
+                <div id="grafico-cardiologia" class="grafico-container"></div>
+ 
+                <ul class="evolucao-metrics">
+ 
+                  <li><strong>97,6%</strong><span>Desempenho atual</span></li>
+ 
+                  <li><strong>t ≈ 1,8</strong><span>Pico de velocidade</span></li>
+ 
+                  <li><strong>Desacelerando</strong><span>Fase atual</span></li>
+ 
+                </ul>
+ 
+              </article>
+ 
+ 
+ 
+              <!-- Card Anatomia -->
+ 
+              <article class="evolucao-card">
+ 
+                <div class="evolucao-card__head">
+ 
+                  <h3>Anatomia</h3>
+ 
+                  <span class="evolucao-badge evolucao-badge--lenta">Evolução gradual</span>
+ 
+                </div>
+ 
+                <div id="grafico-anatomia" class="grafico-container"></div>
+ 
+                <ul class="evolucao-metrics">
+ 
+                  <li><strong>73,4%</strong><span>Desempenho atual</span></li>
+ 
+                  <li><strong>t ≈ 4,6</strong><span>Pico de velocidade</span></li>
+ 
+                  <li><strong>Ainda acelerando</strong><span>Fase atual</span></li>
+ 
+                </ul>
+ 
+              </article>
+ 
+            </div>
+ 
+ 
+ 
+           
+ 
+            <article class="evolucao-card evolucao-card--comparativo">
+ 
+              <div class="evolucao-card__head">
+ 
+                <h3>Comparativo: ritmo de evolução (velocidade de aprendizado)</h3>
+ 
+              </div>
+ 
+              <div id="grafico-velocidade" class="grafico-container"></div>
+ 
+              <p class="evolucao-nota">
+ 
+                Em Cardiologia, você já passou pelo pico de ritmo de aprendizado (por volta da atividade 2) e agora está
+ 
+                estabilizando perto de 100%. Em Anatomia, o pico de ritmo ainda está por vir (por volta da atividade 5) —
+ 
+                ou seja, essa é a matéria com mais espaço para evoluir rápido se você continuar praticando.
+ 
+              </p>
+ 
+            </article>
+ 
+          </section>
         </main>
       </div>
     </div>

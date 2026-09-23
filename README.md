@@ -1,2 +1,0 @@
-# clinify-front-web
-

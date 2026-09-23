@@ -1,6 +1,7 @@
 (function () {
     var VITAIS_POR_MATERIA = {
         cardiologia: {pa: '148/92', fc: '104', temperatura: '36,7', dor: '7/10', dorDescricao: 'forte'},
+        anatomia: {pa: '124/78', fc: '82', temperatura: '36,6', dor: '6/10', dorDescricao: 'moderada'},
         pneumologia: {pa: '126/78', fc: '98', temperatura: '37,2', dor: '2/10', dorDescricao: 'leve'},
         neurologia: {pa: '120/80', fc: '72', temperatura: '36,5', dor: '8/10', dorDescricao: 'intensa'},
         gastroenterologia: {pa: '112/72', fc: '88', temperatura: '37,1', dor: '6/10', dorDescricao: 'moderada'},
@@ -228,6 +229,7 @@
         function gerarCasoLocal(materia, dificuldade, caracteristicas) {
             var materias = {
                 cardiologia: ['Cardiologia', 'Sinto um desconforto no peito e gostaria de entender o que está acontecendo.'],
+                anatomia: ['Anatomia', 'Sinto dor quando movimento essa região e gostaria de entender quais estruturas podem estar envolvidas.'],
                 pneumologia: ['Pneumologia', 'Minha respiração mudou e isso tem me preocupado.'],
                 neurologia: ['Neurologia', 'Tenho percebido sintomas diferentes e quero contar quando começaram.'],
                 gastroenterologia: ['Gastroenterologia', 'Tenho sentido um desconforto digestivo e gostaria de conversar sobre isso.'],
@@ -286,9 +288,13 @@
     function initConsultation() {
         var catalogo = {
             'cardio-dor': {materia: 'cardiologia', area: 'Cardiologia', titulo: 'Dor no peito após exercício', pessoa: 'João, 45 anos', resumo: 'Homem, 45 anos, dor no peito após exercício físico.', fala: 'Sinto dor no peito depois de fazer exercício.', sinaisVitais: vitaisPadrao('cardiologia')},
+            'anatomia-ombro': {materia: 'anatomia', area: 'Anatomia', titulo: 'Dor no ombro ao elevar o braço', pessoa: 'Rafael, 34 anos', resumo: 'Homem, 34 anos, dor no ombro ao elevar o braço após esforço.', fala: 'Meu ombro começou a doer depois que carreguei algumas caixas.', sinaisVitais: vitaisPadrao('anatomia')},
+            'anatomia-coluna': {materia: 'anatomia', area: 'Anatomia', titulo: 'Dor lombar irradiada', pessoa: 'Helena, 52 anos', resumo: 'Mulher, 52 anos, dor lombar irradiada para a perna direita.', fala: 'A dor começa na lombar e desce pela minha perna direita.', sinaisVitais: {pa: '132/84', fc: '86', temperatura: '36,5', dor: '8/10', dorDescricao: 'intensa'}},
             'pneumo-fadiga': {materia: 'pneumologia', area: 'Pneumologia', titulo: 'Fadiga e falta de ar', pessoa: 'Maria, 28 anos', resumo: 'Mulher, 28 anos, fadiga constante e falta de ar.', fala: 'Estou cansada com frequência e sinto falta de ar.', sinaisVitais: vitaisPadrao('pneumologia')},
             'pediatria-febre': {materia: '', area: 'Pediatria', titulo: 'Febre e manchas na pele', pessoa: 'Paciente, 8 anos', resumo: 'Criança, 8 anos, febre alta, dor de garganta e manchas na pele.', fala: 'Estou com febre e minha garganta dói.', sinaisVitais: vitaisPadrao('pediatria')},
             'endo-sede': {materia: 'endocrinologia', area: 'Endocrinologia', titulo: 'Sede e perda de peso', pessoa: 'Paciente, 61 anos', resumo: 'Mulher, 61 anos, muita sede, perda de peso e ferida no pé.', fala: 'Tenho sentido muita sede e perdi peso.', sinaisVitais: vitaisPadrao('endocrinologia')},
+            'gastro-dor': {materia: 'gastroenterologia', area: 'Gastroenterologia', titulo: 'Dor abdominal e náusea', pessoa: 'Marcos, 39 anos', resumo: 'Homem, 39 anos, dor na parte superior do abdômen e náusea.', fala: 'Sinto uma queimação na parte de cima da barriga, principalmente depois de comer.', sinaisVitais: vitaisPadrao('gastroenterologia')},
+            'histo-biopsia': {materia: 'histologia', area: 'Histologia', titulo: 'Dúvidas sobre uma biópsia', pessoa: 'Patrícia, 47 anos', resumo: 'Mulher, 47 anos, dúvidas sobre o resultado de uma biópsia.', fala: 'Recebi o resultado da biópsia e não entendi o que significa a descrição do tecido.', sinaisVitais: vitaisPadrao('histologia')},
             'gineco-dor': {materia: '', area: 'Ginecologia', titulo: 'Dor pélvica e sangramento irregular', pessoa: 'Paciente, 32 anos', resumo: 'Mulher, 32 anos, dor pélvica intensa e sangramento irregular.', fala: 'Estou com dor pélvica e sangramento irregular.', sinaisVitais: vitaisPadrao('ginecologia')},
             'mental-palpitacoes': {materia: '', area: 'Saúde Mental', titulo: 'Palpitações e medo intenso', pessoa: 'Paciente, 21 anos', resumo: 'Jovem, 21 anos, palpitações, medo intenso e sensação de morte.', fala: 'Estou com palpitações e muito medo.', sinaisVitais: vitaisPadrao('mental')},
             'emergencia-queda': {materia: '', area: 'Emergência', titulo: 'Queda de bicicleta', pessoa: 'Paciente, 24 anos', resumo: 'Homem, 24 anos, queda de bicicleta, confusão e dor abdominal.', fala: 'Caí de bicicleta e estou com dor abdominal.', sinaisVitais: vitaisPadrao('emergencia')},
@@ -380,7 +386,7 @@
             if (rotulo) rotulo.textContent = caso.area + ' · ' + (caso.nivel ? 'dificuldade ' + caso.nivel.toLowerCase() : 'consulta simulada');
             var icone = document.querySelector('.consulta-materia [data-materia-icon]');
             if (icone && materia) {
-                icone.className = 'study-icon study-icon--' + ({cardiologia: 'red', pneumologia: 'blue', neurologia: 'purple', endocrinologia: 'orange'}[materia] || 'blue');
+                icone.className = 'study-icon study-icon--' + ({cardiologia: 'red', anatomia: 'purple', pneumologia: 'blue', neurologia: 'purple', gastroenterologia: 'green', endocrinologia: 'orange', histologia: 'yellow'}[materia] || 'blue');
                 window.ClinifyMaterias.pintar(icone, materia);
                 icone.dataset.materiaIcon = materia;
             } else if (icone) icone.remove();
